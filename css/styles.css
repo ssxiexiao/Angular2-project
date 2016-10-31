@@ -1,0 +1,28 @@
+body {
+	width: 100vw;
+	height: 100vh;
+}
+
+.btn-group-wrap {
+    margin-top: -3px;
+}
+
+.panel.panel-default {
+	width: 100%;
+	height: 100%;
+}
+
+svg {
+	width: 100%;
+	height: 100%;
+}
+
+.panel-body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+
+.panel-title {
+	font-size: 24px;
+}

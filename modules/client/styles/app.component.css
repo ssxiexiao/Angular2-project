@@ -1,0 +1,11 @@
+.container1 {
+	width: 75vw;
+	height: 100vh;
+	display: inline-block;
+}
+
+.container2 {
+	width: 24vw;
+	height: 100vh;
+	display: inline-block;
+}

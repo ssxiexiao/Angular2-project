@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+<div class="panel-heading">
+  <h3 class="panel-title" style="display:inline-block;">
+      {{title}}
+  </h3>
+  <div class="btn-group-wrap" style="display:inline-block; float: right; margin-right: 100px;">
+    <div class="btn-group">
+	    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">{{statusOption}}
+	        <span class="caret"></span>
+	    </button>
+	    <ul class="dropdown-menu" role="menu">
+	        <li>
+	            <a href="#" (click)="onSelectStatus('','','默认')">默认</a>
+	        </li>
+	    		<li class="divider"></li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase1','A','A 发球轮')">A 发球轮</a>
+	        </li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase2','A','A 接发球轮')">A 接发球轮</a>
+	        </li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase3','A','A 相持')">A 相持</a>
+	        </li>
+	        <li class="divider"></li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase1','B','B 发球轮')">B 发球轮</a>
+	        </li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase2','B','B 接发球轮')">B 接发球轮</a>
+	        </li>
+	        <li>
+	            <a href="#" (click)="onSelectStatus('phase3','B','B 相持')">B 相持</a>
+	        </li>
+	    </ul>
+		</div>
+	</div>
+</div>
+<div class="panel-body">
+	<svg>
+		<svg:rect class="rally A"
+		*ngFor="let rally of rallies; let i = index" 		
+		[attr.width]="getRect(rally, i, 'A').width" [attr.height]="getRect(rally, i, 'A').height"
+		[attr.x]="getRect(rally, i, 'A').x" [attr.y]="getRect(rally, i, 'A').y"
+		[class.hasSameTacic]="hasSameTactic(rally)" (click)="onSelectRally(rally)"
+		[class.hasSameStatus]="hasSameStatus(rally, 'A')"/>
+		<svg:rect class="rally B"
+		*ngFor="let rally of rallies; let i = index" 		
+		[attr.width]="getRect(rally, i, 'B').width" [attr.height]="getRect(rally, i, 'B').height"
+		[attr.x]="getRect(rally, i, 'B').x" [attr.y]="getRect(rally, i, 'B').y" 
+		[class.hasSameTacic]="hasSameTactic(rally)" (click)="onSelectRally(rally)"
+		[class.hasSameStatus]="hasSameStatus(rally, 'B')"/>
+	</svg>
+</div>
+</div>

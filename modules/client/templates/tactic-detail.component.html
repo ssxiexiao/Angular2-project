@@ -1,0 +1,36 @@
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h3 class="panel-title">
+        Tactics
+    </h3>
+</div>
+<div class="panel-body">
+	<svg>
+		<defs>
+			<g id="desk">
+				<rect class="area"
+				*ngFor="let area of rectNo"
+				[attr.x]="area.x" [attr.y]="area.y"
+				[attr.width]="area.width" [attr.height]="area.height"/>
+			</g>
+	    <marker id="arrow" viewBox="0 0 10 10" markerWidth="6" markerHeight="6" 
+	    refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+	      <path d="M0,0 L0,6 L9,3 z" />
+	    </marker>
+		</defs>
+		<g *ngFor="let layout of tacticLayouts; let i = index;">
+			<svg:use xlink:href="#desk" 
+			[attr.x]="layout.x0" [attr.y]="layout.y0"
+			/>
+			<svg:path *ngFor="let line of layout.lines; let j = index;"
+			[attr.d]="line.d" [ngClass]="layout.lineTypes[j]"
+			class="track" marker-end="url(#arrow)"
+			/>
+			<svg:circle *ngFor="let circle of layout.balls; let j = index;"
+			[attr.cx]="circle.cx" [attr.cy]="circle.cy"
+			[attr.r]="circle.r" [ngClass]="{'start': !j}"
+			/>
+		</g>
+	</svg>
+</div>
+</div>

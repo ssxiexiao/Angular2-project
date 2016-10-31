@@ -1,0 +1,35 @@
+.rally {
+	stroke: #fff;
+	stroke-width: 1;
+	transition: fill 0.5s, fill-opacity 0.5s;
+	fill-opacity: 0.8;
+	cursor: pointer;
+}
+
+.rally:hover {
+	stroke: #000;
+}
+
+.rally.A {
+	fill: #fc8d59;
+	transform-origin: center bottom;
+}
+
+.rally.B {
+	fill: #91bfdb;
+	transform-origin: center top;
+}
+
+.rally.hasSameTacic.A {
+	fill: #F7503C;
+	fill-opacity: 1;
+}
+
+.rally.hasSameTacic.B {
+	fill: #3498db;
+	fill-opacity: 1;
+}
+
+.rally.hasSameStatus {
+	fill: #2c3e50;
+}

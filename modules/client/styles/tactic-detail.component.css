@@ -1,0 +1,40 @@
+rect.area {
+	fill: #fff;
+	stroke: #aaa;
+	stroke-width: 2;
+}
+
+path.track {
+	fill: none;
+	stroke: #666;
+	stroke-width: 3;
+}
+
+circle {
+	fill: #bdc3c7;
+}
+
+circle.start {
+/*	transform: scale(1.5);
+	transform-origin: center;*/
+}
+
+path.serve {
+	stroke: #9b59b6;
+}
+
+path.score {
+	stroke: #2ecc71;
+}
+
+path.offense {
+	stroke: #e74c3c;
+}
+
+path.control {
+	stroke: #34495e;
+}
+
+path.defense {
+	stroke: #3498db;
+}
